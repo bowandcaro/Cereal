@@ -51,8 +51,15 @@ plt.ylabel('Average Rating')
 plt.xlabel('Brand')
 plt.show()
 
+Nabisco = df[df['mfr'] == 'N']
+print(Nabisco['name'])
+
 #which cereal has the least amount of sugar
 df_rating_sorted = df.sort_values('sugars', ascending=True)
+print(df_rating_sorted[['name', 'sugars']].head(10))
+
+#most amount of sugar
+df_rating_sorted = df.sort_values('sugars', ascending=False)
 print(df_rating_sorted[['name', 'sugars']].head(10))
 
 #which cereal has the greatest amont of protein
